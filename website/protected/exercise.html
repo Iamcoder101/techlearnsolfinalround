@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechLearn - The Web Awakens</title>
+    <link rel="stylesheet" href="/static/assets/styles/style.css">
+    <link rel="stylesheet" href="/static/assets/styles/exercise.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <h1>TechLearn</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="http://localhost:5000/">Home</a></li>
+                <li><a href="http://localhost:5000/api/protected/dashboard">Dashboard</a></li>
+                <li><a href="#profile">Profile</a></li>
+                 <li><a href="http://localhost:5000/" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="exercise-container">
+        <div class="exercise-sidebar">
+            <div class="exercise-info">
+                <h2 class="exercise-title" id="exercise-title">Loading title...</h2>
+                <p class="exercise-description" id="exercise-description">Loading description...</p>
+            </div>
+            <div class="theory-section">
+                <h3>Theory</h3>
+                <div class="theory-content" id="exercise-theory">
+                    <p>Loading theory...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="code-workspace">
+            <div class="editor-container">
+                <div class="editor-header">
+                    <div class="file-tabs">
+                        <button class="file-tab active" data-file="html">index.html</button>
+                    </div>
+                    <button class="save-btn">Save Progress</button>
+                    <button class="run-btn">Run Code</button>
+                </div>
+                <div class="editor-wrapper">
+                    <textarea id="code-editor"></textarea>
+                </div>
+            </div>
+            <div class="preview-container">
+                <div class="preview-header">
+                    <h3>Output</h3>
+                    <button class="refresh-btn"><i class="fas fa-sync-alt"></i></button>
+                </div>
+                <iframe id="preview-frame" class="preview-frame"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer class="exercise-footer">
+        <div class="container">
+            <p>&copy; 2024 TechLearn Solutions. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#help">Help</a>
+                <a href="#docs">Documentation</a>
+                <a href="#" class="next-exercise">Next Exercise →</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
+    <script>
+  const editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
+    mode: 'xml',
+    theme: 'monokai',
+    lineNumbers: true,
+    autoCloseTags: true,
+    autoCloseBrackets: true,
+    matchBrackets: true,
+    indentUnit: 2,
+    tabSize: 2,
+    lineWrapping: true
+  });
+
+  document.querySelector('.run-btn').addEventListener('click', () => {
+    const code = editor.getValue();
+    const preview = document.getElementById('preview-frame').contentWindow.document;
+    preview.open();
+    preview.write(code);
+    preview.close();
+  });
+
+  
+  document.addEventListener("DOMContentLoaded", async () => {
+    const pathParts = window.location.pathname.split('/');
+    const id = pathParts[pathParts.length - 1];
+
+    // load exercise...
+    const response = await fetch(`/api/protected/exercises/${id}`, { credentials: 'include' });
+    const data = await response.json();
+    document.getElementById("exercise-title").textContent = data.title;
+    document.getElementById("exercise-description").textContent = data.story;
+    document.getElementById("exercise-theory").textContent = data.explain;
+    editor.setValue(data.theory); // load starter code
+
+    // fetch progress here
+    document.querySelector('.save-btn').addEventListener('click', async () => {
+  const code = editor.getValue();
+  const pathParts = window.location.pathname.split('/');
+  const id = pathParts[pathParts.length - 1];
+
+  try {
+    const res = await fetch(`/api/progress/${id}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ code })
+    });
+
+    const result = await res.json();
+    alert("Progress saved!"); // Optional toast or message
+    console.log("Manual save result:", result);
+  } catch (err) {
+    console.error("Manual save error:", err);
+    alert("Error saving progress.");
+  }
+})});
+
+document.getElementById('logoutBtn').addEventListener('click', async () => {
+    try {
+        const res = await fetch('http://localhost:5000/api/auth/logout', {
+            method: 'POST',
+            credentials: 'include', // send cookies
+        });
+
+        if (res.ok) {
+            // Redirect to login screen
+            window.location.href = '/';
+        } else {
+            alert("Logout failed.");
+        }
+    } catch (error) {
+        alert("Error during logout.");
+    }
+});
+
+</script>
+
+</body>
+</html>
