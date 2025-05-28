@@ -18,10 +18,10 @@
                 <h1>TechLearn</h1>
             </div>
             <ul class="nav-menu">
-                <li><a href="http://localhost:5000/">Home</a></li>
-                <li><a href="http://localhost:5000/api/protected/dashboard">Dashboard</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/api/protected/dashboard">Dashboard</a></li>
                 <li><a href="#profile">Profile</a></li>
-                 <li><a href="http://localhost:5000/" id="logoutBtn">Logout</a></li>
+                 <li><a href="/" id="logoutBtn">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -137,7 +137,7 @@
 
 document.getElementById('logoutBtn').addEventListener('click', async () => {
     try {
-        const res = await fetch('http://localhost:5000/api/auth/logout', {
+        const res = await fetch('/api/auth/logout', {
             method: 'POST',
             credentials: 'include', // send cookies
         });
