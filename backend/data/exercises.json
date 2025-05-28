@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "title": "The Web Awakens – Creating Your First HTML Page",
+    "Story": "Every adventure begins somewhere. This one begins with your first-ever HTML page. Let's put it together and start your journey on the web!",
+    "explain": "<!DOCTYPE html>- Declares the document type and version\n         <html>- The root element\n          <head>- Contains metadata about the document\n          <title>- Sets the page title in browser tab\n          <body>- Contains the visible content\n          <p>The <code>&lt;h1&gt;</code> tag is used for the main heading of the page.</p>",
+    "theory": "<!DOCTYPE html> <!-- Declares the document type as HTML5 -->\n<html> <!-- Root element of the HTML document -->\n<head> <!-- Contains metadata and title -->\n  <title>My Web Adventure</title> <!-- Title of the webpage displayed on the browser tab -->\n</head>\n<body> <!-- The main content of the webpage -->\n  <!-- This is how you write a comment in HTML -->\n  <!-- Comments are ignored by the browser and used to explain code -->\n <h1>The Journey of HTML Begins</h1> <!-- Main heading for the page -->\n</body> <!-- End of body -->\n</html> <!-- End of HTML document -->"
+  },
+  {
+    "id": 2,
+    "title": "Speak Loud and Clear – Meet the Headings!",
+    "Story": " Headings are like signboards on the road. They help you organize your ideas and guide your readers. Time to try out headings from big to small.",
+    "explain": "<body> <!-- Starts the body where content is displayed -->\n<h1>Main Title</h1> <!-- Largest heading -->\n<h2>Subheading Level 1</h2> <!-- Second largest heading -->\n<h6>The smallest whisper of a heading</h6> <!-- Smallest heading -->\n</body> <!-- Ends the body -->\nHint: Try adding <h3> and <h4> between them.",
+    "theory": "<!DOCTYPE html> <!-- Declares the document type as HTML5 -->\n<html> <!-- Root element of the HTML document -->\n<head> <!-- Contains metadata and title -->\n  <title>My Web Adventure</title> <!-- Title of the webpage displayed on the browser tab -->\n</head>\n<body> <!-- The main content of the webpage -->\n  <!-- This is how you write a comment in HTML -->\n  <!-- Comments are ignored by the browser and used to explain code -->\n <h1>The Journey of HTML Begins</h1> <!-- Main heading for the page -->\n</body> <!-- End of body -->\n</html> <!-- End of HTML document -->"
+  },
+  {
+    "id": 3,
+    "title": "The Grocery Scroll – Unleashing Lists",
+    "Story": "It's time to organize your pantry and cooking steps using lists! You’ll use both unordered and ordered lists to do this.",
+    "explain": "<body>\n<h2>My Grocery List</h2> <!-- Heading for the grocery list -->\n<ul> <!-- Unordered list with bullet points -->\n<li>Milk</li>    <!-- First list item -->\n<li>Eggs</li>     <!-- Second list item -->\n<!-- Add your favorite snack here --> \n<li></li> <!-- ← User adds another list item here -->\n</ul>\n<h2>Steps to Make a Sandwich</h2> <!-- Heading for the step-by-step list -->\n<ol> <!-- Ordered list with numbers -->\n<li>Take two slices of bread</li>\n<li>Spread butter or sauce</li>\n<li>Place your favorite filling</li>\n<li>Put slices together and enjoy!</li>\n</ol>\n</body>\nHint: Use <li> tags to list grocery items and sandwich steps.",
+    "theory": "<!DOCTYPE html> <!-- Declares the document type as HTML5 -->\n<html> <!-- Root element of the HTML document -->\n<head> <!-- Contains metadata and title -->\n  <title>My Web Adventure</title> <!-- Title of the webpage displayed on the browser tab -->\n</head>\n<body> <!-- The main content of the webpage -->\n  <!-- This is how you write a comment in HTML -->\n  <!-- Comments are ignored by the browser and used to explain code -->\n <h1>The Journey of HTML Begins</h1> <!-- Main heading for the page -->\n</body> <!-- End of body -->\n</html> <!-- End of HTML document -->"
+  },
+  {
+    "id": 4,
+    "title": " Picture Perfect- Adding an Image",
+    "Story": " Images speak louder than text sometimes. Time to decorate your webpage with an image of your favorite thing!",
+    "explain": "<body>\n<h2>This is My Favorite Animal</h2>  <!-- Heading for the image -->\n<img src='https://unsplash.com/photos/a-girl-takes-a-photo-with-her-camera-oGeVYS5PoEI' alt='A girl with camera' width='300'>\n<!-- Image of a girl with camera from Unsplash; replace the URL with your own image link or path -->\n<!-- Tip for user: Replace the src with a local file path or another image URL from the web -->\n</body>\nHint: Use <img src='...' alt='...'> to embed your image.",
+    "theory": "<!DOCTYPE html> <!-- Declares the document type as HTML5 -->\n<html> <!-- Root element of the HTML document -->\n<head> <!-- Contains metadata and title -->\n  <title>My Web Adventure</title> <!-- Title of the webpage displayed on the browser tab -->\n</head>\n<body> <!-- The main content of the webpage -->\n  <!-- This is how you write a comment in HTML -->\n  <!-- Comments are ignored by the browser and used to explain code -->\n <h1>The Journey of HTML Begins</h1> <!-- Main heading for the page -->\n</body> <!-- End of body -->\n</html> <!-- End of HTML document -->"
+  },
+  {
+    "id": 5,
+    "title": "The Great Divide-  Sections, Classes & Divs",
+    "Story": " Think of your webpage like rooms in a house. Sections and divs help organize each room",
+    "explain": "<body>\n<section class='about-me'> <!-- A semantic section for personal info -->\n<h2>About Me</h2> <!-- Section title -->\n<p>I am learning frontend development and loving it!</p> <!-- Description inside the section -->\n</section>\n<div class='fun-facts'> <!-- A generic container for extra content -->\n<h3>Fun Facts</h3> <!-- Heading for fun facts -->\n<ul> <!-- List of fun facts -->\n<li>I can solve a Rubik's Cube</li>\n<li>I love coffee</li>\n<!-- Add another fun fact about yourself -->\n<li></li> <!-- ← User fills in their own fact -->\n</ul>\n</div>\n</body>",
+    "theory": "<!DOCTYPE html> <!-- Declares the document type as HTML5 -->\n<html> <!-- Root element of the HTML document -->\n<head> <!-- Contains metadata and title -->\n  <title>My Web Adventure</title> <!-- Title of the webpage displayed on the browser tab -->\n</head>\n<body> <!-- The main content of the webpage -->\n  <!-- This is how you write a comment in HTML -->\n  <!-- Comments are ignored by the browser and used to explain code -->\n <h1>The Journey of HTML Begins</h1> <!-- Main heading for the page -->\n</body> <!-- End of body -->\n</html> <!-- End of HTML document -->"
+  },
+  {
+    "id": 6,
+    "title": "What is CSS?",
+    "Story": " Imagine your website is a plain cake — CSS is the frosting and decorations that make it irresistible! CSS (Cascading Style Sheets) controls how your HTML looks, from colors and fonts to layouts and animations.Let’s start by adding some global styles to your webpage to make it visually appealing.",
+    "explain": "CSS stands for Cascading Style Sheets. CSS describes how HTML elements are to be displayed on screen, paper, or in other media. CSS saves a lot of work. It can control the layout of multiple web pages all at once. External stylesheets are stored in CSS files",
+    "theory": "<!DOCTYPE html>\n<html>\n<head>\n<title>CSS Basics</title>\n<style>\n/* This styles the entire body of the webpage */\nbody {\nfont-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sets a clean font for all text */\nbackground-color: #f0f8ff; /* Adds a light blue background */\ncolor: #333; /* Sets default text color to dark grey */\nmargin: 20px; /* Adds space around the content */\n}\n/* Style for all headings */\nh1, h2 {\ncolor: #1e90ff; /* Dodger blue color for headings */\n}\n</style>\n</head>\n<body>\n<h1>Welcome to CSS!</h1>\n<h2>Making websites beautiful, one style at a time</h2>\n<p>Notice how the background and text colors change the whole mood of the page.</p>\n</body>\n</html>"
+  },
+  {
+    "id": 8,
+    "title": " Perfect Your Navbar",
+    "Story": " Your navbar is your website's compass. Let's style it so users can easily navigate while making it visually sleek.",
+    "explain": "CSS stands for Cascading Style Sheets. CSS describes how HTML elements are to be displayed on screen, paper, or in other media. CSS saves a lot of work. It can control the layout of multiple web pages all at once. External stylesheets are stored in CSS files",
+    "theory": "<!DOCTYPE html>\n<html>\n<head>\n<title>Navbar Styling</title>\n<style>\n/* Style the navigation bar */\nnav {\nbackground-color: #333; /* Dark background */\noverflow: hidden; /* Clear floats */\npadding: 10px 0;\n}\n/* Style the links inside the navbar */\nnav a {\ncolor: white; /* White text color */\ntext-decoration: none; /* Remove underline */\npadding: 14px 20px; /* Spacing around links */\nfloat: left; /* Align links horizontally */\nfont-weight: bold;\nfont-family: Arial, sans-serif;\n}\n/* Change link color on hover */\nnav a:hover {\nbackground-color: #575757; /* Dark grey background on hover */\n}\n</style>\n</head>\n<body>\n<nav>\n<a href='#'>Home</a>\n<a href='#'>About</a>\n<a href='#'>Contact</a>\n</nav>\n</body>\n</html>\n"
+  },
+  {
+    "id": 7,
+    "title": "Styling Lists Like a Pro",
+    "Story": " Lists organize your content like a neat shelf. But plain bullet points are boring! Let's spice them up with custom colors, spacing, and styles.",
+    "explain": "Hint: Try different list-style-type values and adjust spacing to make lists easier to read.",
+    "theory": "<!DOCTYPE html>\n<html>\n<head>\n<title>Styled Lists</title>\n<style>\n/* Style all unordered lists */\nul {\nlist-style-type: square; /* Changes bullets from default circles to squares */\npadding-left: 20px; /* Adds space on the left */\ncolor: green; /* Changes bullet text color */\nfont-weight: bold; /* Makes list items bold */\n}\n/* Style all list items */\nli {\nmargin-bottom: 10px; /* Adds space between list items */\n}\n</style>\n</head>\n<body>\n<ul>\n<li>Learn HTML basics</li>\n<li>Master CSS styling</li>\n<li>Build interactive pages</li>\n<!-- Add your favorite item below -->\n</ul>\n</body>\n</html>\n"
+  }
+
+]
